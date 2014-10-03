@@ -30,3 +30,4 @@ Route::post('/logout', [
     'as' => 'logout'
 ]);
 
+Route::controller('password', 'RemindersController');
