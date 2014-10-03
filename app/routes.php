@@ -13,6 +13,8 @@
 
 Route::get('/', ['uses' => 'HomeController@showWelcome', 'as' => 'home']);
 
+Route::resource('posts', 'PostsController');
+
 Route::get('/login', [
     'uses' => 'LoginController@getLogin',
     'as' => 'login.show'
