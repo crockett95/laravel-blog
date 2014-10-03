@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
+    {{ HTML::style('assets/css/main-build.css') }}
 
     <title>@yield('title', 'Log In')</title>
 
