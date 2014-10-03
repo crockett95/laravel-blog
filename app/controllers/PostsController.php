@@ -4,8 +4,8 @@ class PostsController extends \BaseController {
 
     public function __construct()
     {
-        $this->beforeFilter('auth', [ 'on' => ['create', 'store', 'edit', 'update', 'destroy'] ]);
-        $this->beforeFilter('csrf', [ 'on' => ['store', 'update', 'destroy'] ]);
+        $this->beforeFilter('auth', [ 'only' => ['create', 'store', 'edit', 'update', 'destroy'] ]);
+        $this->beforeFilter('csrf', [ 'only' => ['store', 'update', 'destroy'] ]);
     }
 
     /**
