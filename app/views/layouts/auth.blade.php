@@ -10,6 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
+
     <title>@yield('title', 'Log In')</title>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
