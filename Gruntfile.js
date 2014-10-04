@@ -13,7 +13,8 @@ module.exports = function (grunt) {
         sass: {
             options: {
                 unixNewlines: true,
-                precision: 10
+                precision: 10,
+                trace: true
             },
             dev: {
                 options: {
@@ -35,9 +36,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'public/assets',
-                    src: ['scss/**/*.scss'],
-                    dest: 'css',
+                    cwd: 'public/assets/scss',
+                    src: ['**/*.scss'],
+                    dest: 'public/assets/css',
                     ext: '-min.css'
                 }]
             }

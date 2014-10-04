@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "bootstrap-sass-official": "~3.2.0",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "froala-wysiwyg": "~1.2.2"
   }
 }

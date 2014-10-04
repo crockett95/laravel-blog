@@ -27,7 +27,7 @@ class LoginController extends BaseController {
     public function postLogout()
     {
         Auth::logout();
-        return Redirect::to('home')->with('success', 'You have been logged out');
+        return Redirect::to(Input::get('url'))->with('success', 'You have been logged out');
     }
 
 }

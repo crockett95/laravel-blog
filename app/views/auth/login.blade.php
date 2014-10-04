@@ -29,7 +29,7 @@
                     {{ Form::checkbox('remember', 1, null) }} Remember Me
                 </label>
             </div>
-            {{ Form::submit('Login', ['class' => 'btn btn-lg btn-success btn-block']) }}
+            {{ Form::button('Login', ['class' => 'btn btn-lg btn-success btn-block', 'type' => 'submit']) }}
         </fieldset>
     {{ Form::close() }}
 @stop

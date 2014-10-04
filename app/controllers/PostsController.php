@@ -17,7 +17,7 @@ class PostsController extends \BaseController {
     {
         $posts = Post::paginate(5);
         $canEdit = Auth::check();
-        return /*"Hello world"*/ View::make('blog.home', ['posts' => $posts, 'canEdit' => $canEdit]);
+        return View::make('blog.home', ['posts' => $posts, 'canEdit' => $canEdit]);
     }
 
 
@@ -29,7 +29,7 @@ class PostsController extends \BaseController {
     public function create()
     {
         $user = Auth::user();
-        return "Hello world" /*View::make('blog.edit')->with('user', $user)*/;
+        return View::make('blog.edit')->with('user', $user);
     }
 
 
@@ -40,8 +40,16 @@ class PostsController extends \BaseController {
      */
     public function store()
     {
-        //
-        return;
+        $post = new Post();
+        $post->title = Input::get('title');
+        $post->body = Input::get('content');
+
+        $author = User::find(Input::get('author'));
+
+        $post->author()->associate($author);
+
+        $post->save();
+        return Redirect::route('posts.show', $post->id);
     }
 
 
@@ -54,8 +62,8 @@ class PostsController extends \BaseController {
     public function show($id)
     {
         //
-        $post = Post::with('user')->find($id)->firstOrFail();
-        $canEdit = Auth::check();
+        // $post = Post::with('user')->find($id)->firstOrFail();
+        // $canEdit = Auth::check();
         return 'Hello world' /*View::make('blog.post', ['post' => $posts, 'canEdit' => $canEdit])*/;
     }
 
