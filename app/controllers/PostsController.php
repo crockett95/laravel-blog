@@ -15,7 +15,7 @@ class PostsController extends \BaseController {
      */
     public function index()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         $canEdit = Auth::check();
         return View::make('blog.home', ['posts' => $posts, 'canEdit' => $canEdit]);
     }
@@ -62,9 +62,9 @@ class PostsController extends \BaseController {
     public function show($id)
     {
         //
-        // $post = Post::with('user')->find($id)->firstOrFail();
-        // $canEdit = Auth::check();
-        return 'Hello world' /*View::make('blog.post', ['post' => $posts, 'canEdit' => $canEdit])*/;
+        $post = Post::findOrFail($id);
+        $canEdit = Auth::check();
+        return View::make('blog.post', ['post' => $post, 'canEdit' => $canEdit]);
     }
 
 

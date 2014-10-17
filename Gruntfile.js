@@ -57,11 +57,11 @@ module.exports = function (grunt) {
         },
         watch: {
             sass: {
-                files: ['**/*.scss', '**/*.sass'],
+                files: ['**/*.scss', '**/*.sass', '!public/assets/bower_components/**/*'],
                 tasks: ['sass:dev']
             },
             scripts: {
-                files: ['**/*.js'],
+                files: ['**/*.js', '!public/assets/bower_components/**/*'],
                 tasks: ['jshint']
             }
         }

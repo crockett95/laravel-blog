@@ -32,7 +32,7 @@
                                 {{{ $post->title }}}
                             </h2>
                         </a>
-                        <p class="post-meta">{{{ $post->author->name }}} at {{{ $post->created_at }}}</p>
+                        <p class="post-meta">{{{ $post->author->name }}} on {{{ $post->created_at->toDayDateTimeString() }}}</p>
                     </div>
                     <hr>
                 @empty
@@ -46,11 +46,7 @@
                     <hr>
                 @endforelse
                 <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+                {{ $posts->links() }}
             </div>
         </div>
     </div>
